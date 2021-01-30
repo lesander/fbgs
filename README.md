@@ -21,17 +21,12 @@ pip3 install -r requirements.txt
 CLI usage:
 
 ```shell
-# pypi
-fbgs
-
-# local
-python3 -m scraper
-
-# args
---username user@example.com
---password "example-password"
---url https://m.facebook.com/groups/group-name
---output ./path/for/output.json
+# local & pypi
+python3 -m fbgs \
+--username user@example.com \
+--password "example-password" \
+--url https://m.facebook.com/groups/group-name \
+--output ./path/for/output.json \
 --no-shell  # toggle to disable default selenium interactive prompt
 ```
 
