@@ -7,7 +7,7 @@ Requirements:
 - Selenium (automatically installed)
 
 ## Installing
-
+Install via pypi: [`fbgs`](https://pypi.org/project/fbgs/)
 ```shell
 # pypi
 pip3 install fbgs
