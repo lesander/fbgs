@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fbgs",
-    version="0.0.1",
+    version="1.0.0",
     description="Python and selenium based (mobile) Facebook groups scraper, independent of obfuscated css selectors.",
     long_description=long_description,
     long_description_content_type="text/markdown",
