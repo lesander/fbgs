@@ -6,9 +6,9 @@ Requirements:
 - Python 3.6 or newer
 - Selenium (automatically installed)
 
-Installing:
+## Installing
 
-```
+```shell
 # pypi
 pip3 install fbgs
 
@@ -18,8 +18,9 @@ cd facebook-group-scraper/
 pip3 install -r requirements.txt
 ```
 
-CLI usage:
+## Usage
 
+Cli usage:
 ```shell
 # local & pypi
 python3 -m fbgs \
@@ -30,8 +31,7 @@ python3 -m fbgs \
 --no-shell  # toggle to disable default selenium interactive prompt
 ```
 
-Module usage:
-
+Programmatic usage:
 ```python
 from fbgs import FacebookScraper
 from fbgs.exceptions import ScraperException
