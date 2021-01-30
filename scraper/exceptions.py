@@ -1,6 +1,8 @@
+class ScraperException (Exception):
+    pass
 
-class InvalidFacebookUrl (Exception):
+class InvalidFacebookUrl (ScraperException):
     pass
     
-class ExceptionLoadingDriver (Exception):
+class ExceptionLoadingDriver (ScraperException):
     pass
