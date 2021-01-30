@@ -1,5 +1,5 @@
 """
-    Selenium Facebook Groups Scraper
+    Selenium Facebook Scraper
     github.com/lesander
 """
 
@@ -7,7 +7,7 @@ import sys
 import argparse
 import gevent
 
-from exceptions import InvalidFacebookUrl, ExceptionLoadingDriver
+from .exceptions import InvalidFacebookUrl, ExceptionLoadingDriver
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
 from selenium import webdriver
@@ -17,8 +17,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-from datatypes import FacebookPost, FacebookGroup, FacebookProfile
-from utils import save_json
+from .datatypes import FacebookPost, FacebookGroup, FacebookProfile
+from .utils import save_json
 
 class FacebookScraper:
 
@@ -137,7 +137,7 @@ class FacebookScraper:
             self.click("button[type=submit]:last-of-type")
             self.wait_after_submit()
         
-        if self.driver.title is not 'Facebook':
+        if self.driver.title != 'Facebook':
             self.log("We'd expect to have landed on the homepage by now..")
         else:
             self.log("Login finished.")
@@ -196,16 +196,4 @@ class FacebookScraper:
             except Exception as e:
                 print(f"Exception: {str(e)}")
 
-
-if __name__ == "__main__":
-    
-    scraper = FacebookScraper(
-        username="your@email.com", password="insert-your-password-here")
-    scraper.login()
-    g = scraper.scrape_group(
-        url="https://m.facebook.com/groups/group-url-here",
-        out="output-of-your-group.json")
-    print(str(len(g.posts)))
-    scraper.interactive()
-    
 
