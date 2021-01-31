@@ -39,7 +39,12 @@ try:
     scraper = FacebookScraper(
         username="user@example.com", password="example-password")
     scraper.login()
-    g = scraper.scrape_group(url="https://m.facebook.com/groups/group-name", out="output-example.json")
+    group = scraper.scrape_group(url="https://m.facebook.com/groups/group-name", out="output-example.json")
+    
+    # results are stored in group
+    print(group.name, len(group.posts))
+    
+    # you can start a live interaction with the selenium driver
     scraper.interactive()
 except ScraperException as e:
     print(f'ScraperException: {e}')
